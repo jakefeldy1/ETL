@@ -27,7 +27,8 @@ Tha data base was implements in postgresql and lloks like to following diagram:
 
 ### 4.- config.py:
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Make sure to update this file with you data base credentials`
-        Credentials to connect to the local postgresql data base
+        
+Credentials to connect to the local postgresql data base
 
 ### 5.- beer_etl_app.ipynb:
         Main aplication that fetch the csv data process it and populate the data-base
