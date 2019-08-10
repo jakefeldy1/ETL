@@ -36,7 +36,7 @@ Tha database was implemented in postgresql and looks like the following diagram:
      CSV data that contains the review data
 
 #### 4.- config.py:
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Make sure to update this file with you data base credentials`
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Make sure to update this file with your database credentials`
         
     Credentials to connect to the local postgresql data base
 
