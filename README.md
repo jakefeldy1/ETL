@@ -40,5 +40,8 @@ Tha data base was implements in postgresql and lloks like to following diagram:
         
     Credentials to connect to the local postgresql data base
 
-#### 5.- beer_etl_app.ipynb:
+#### 5.- ETL Project Write Up.docx
+     Report for the project
+
+#### 6.- beer_etl_app.ipynb:
      Main aplication that fetch the csv data process it and populate the data-base
