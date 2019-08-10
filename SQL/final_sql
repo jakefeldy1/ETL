@@ -3,9 +3,10 @@
 
 -- Modify this code to update the DB schema diagram.
 -- To reset the sample schema, replace everything with
--- two dots ('..' - without quotes).
+-- two dots (‘..’ - without quotes).
 
-CREATE TABLE "Beer_Styles" (
+CREATE TABLE "beer_styles" (
+    "beer_style_id" int   NOT NULL,
     "name" VARCHAR   NOT NULL,
     "beer_style" VARCHAR   NOT NULL,
     "ibu_Min" float   NOT NULL,
@@ -17,12 +18,12 @@ CREATE TABLE "Beer_Styles" (
     "og_Min" float   NOT NULL,
     "fg_Min" float   NOT NULL,
     "fg_Max" float   NOT NULL,
-    CONSTRAINT "pk_Beer_Styles" PRIMARY KEY (
-        "beer_style"
+    CONSTRAINT "pk_beer_styles" PRIMARY KEY (
+        "beer_style_id"
      )
 );
 
-CREATE TABLE "Beer_Reviews" (
+CREATE TABLE "beer_reviews" (
     "review_id" int   NOT NULL,
     "review_time" time   NOT NULL,
     "user_profile_id" int   NOT NULL,
@@ -33,47 +34,48 @@ CREATE TABLE "Beer_Reviews" (
     "review_taste" float   NOT NULL,
     "beer_name" VARCHAR   NOT NULL,
     "beer_id" int   NOT NULL,
-    CONSTRAINT "pk_Beer_Reviews" PRIMARY KEY (
+    CONSTRAINT "pk_beer_reviews" PRIMARY KEY (
         "review_id"
      )
 );
 
-CREATE TABLE "User_Table" (
+CREATE TABLE "user_table" (
     "profile_name" VARCHAR   NOT NULL,
     "profile_id" int   NOT NULL,
-    CONSTRAINT "pk_User_Table" PRIMARY KEY (
+    CONSTRAINT "pk_user_table" PRIMARY KEY (
         "profile_id"
      )
 );
 
-CREATE TABLE "Brewery_Table" (
+CREATE TABLE "brewery_table" (
     "brewery_id" int   NOT NULL,
     "brewery_name" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_Brewery_Table" PRIMARY KEY (
+    CONSTRAINT "pk_brewery_table" PRIMARY KEY (
         "brewery_id"
      )
 );
 
-CREATE TABLE "Beer_Table" (
+CREATE TABLE "beer_table" (
+    "beer_style_id" int   NOT NULL,
     "beer_id" int   NOT NULL,
     "beer_name" VARCHAR   NOT NULL,
     "brewery_id" int   NOT NULL,
     "beer_abv" float   NOT NULL,
     "beer_style" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_Beer_Table" PRIMARY KEY (
+    CONSTRAINT "pk_beer_table" PRIMARY KEY (
         "beer_id"
      )
 );
 
-ALTER TABLE "Beer_Reviews" ADD CONSTRAINT "fk_Beer_Reviews_user_profile_id" FOREIGN KEY("user_profile_id")
-REFERENCES "User_Table" ("profile_id");
+ALTER TABLE "beer_reviews" ADD CONSTRAINT "fk_beer_reviews_user_profile_id" FOREIGN KEY("user_profile_id")
+REFERENCES "user_table" ("profile_id");
 
-ALTER TABLE "Beer_Reviews" ADD CONSTRAINT "fk_Beer_Reviews_beer_id" FOREIGN KEY("beer_id")
-REFERENCES "Beer_Table" ("beer_id");
+ALTER TABLE "beer_reviews" ADD CONSTRAINT "fk_beer_reviews_beer_id" FOREIGN KEY("beer_id")
+REFERENCES "beer_table" ("beer_id");
 
-ALTER TABLE "Beer_Table" ADD CONSTRAINT "fk_Beer_Table_brewery_id" FOREIGN KEY("brewery_id")
-REFERENCES "Brewery_Table" ("brewery_id");
+ALTER TABLE "beer_table" ADD CONSTRAINT "fk_beer_table_beer_style_id" FOREIGN KEY("beer_style_id")
+REFERENCES "beer_styles" ("beer_style_id");
 
-ALTER TABLE "Beer_Table" ADD CONSTRAINT "fk_Beer_Table_beer_style" FOREIGN KEY("beer_style")
-REFERENCES "Beer_Styles" ("beer_style");
+ALTER TABLE "beer_table" ADD CONSTRAINT "fk_beer_table_brewery_id" FOREIGN KEY("brewery_id")
+REFERENCES "brewery_table" ("brewery_id");
 
