@@ -7,6 +7,16 @@ Tha data base was implements in postgresql and lloks like to following diagram:
 
 ![Beer data base](SQL/final_erd.png)
 
+## To use it:
+
+#### 1.- Create a data named Beer_DB in postgresql
+#### 2.- Execute the queries defined at SQL/final.sql
+#### 3.- Update the file config.py with the postgresql credentials
+#### 4.- Execute beer_etl_app.ipynb to populate the data-base
+
+#### Optional
+
+#### 1.- If you want to run the JSON data colector, enter your key in api_keys.py and execute beer_api.ipynb
 
 ## Requierements:
 
@@ -14,21 +24,21 @@ Tha data base was implements in postgresql and lloks like to following diagram:
 
 #### 1.- psycopg2
 
-## The repo is divided into the following sections:
+### The repo is divided into the following sections:
 
-### 1.- SQL:
-        Contain the erd diagram and the sql quieries to build the tables in postgresql
+#### 1.- SQL:
+     Contain the erd diagram and the sql quieries to build the tables in postgresql
         
-### 2.- JSON:
-        Contains the code used to get the data from brewerydb.com and export it as csv file
+#### 2.- JSON:
+     Contains the code used to get the data from brewerydb.com and export it as csv file
 
-### 3.- beer_reviews.csv:
-        CSV data that contains the review data
+#### 3.- beer_reviews.csv:
+     CSV data that contains the review data
 
-### 4.- config.py:
+#### 4.- config.py:
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Make sure to update this file with you data base credentials`
         
     Credentials to connect to the local postgresql data base
 
-### 5.- beer_etl_app.ipynb:
-        Main aplication that fetch the csv data process it and populate the data-base
+#### 5.- beer_etl_app.ipynb:
+     Main aplication that fetch the csv data process it and populate the data-base
