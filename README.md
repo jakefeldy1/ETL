@@ -1,6 +1,6 @@
 # This repo contains the code and presentation for the ETL project of the Data Analysis Bootcamp.
 
-We gathered beer information from 2 different sources and built a database.
+We gathered beer information from two different sources and built a database.
 
 Tha database was implemented in postgresql and looks like the following diagram:
 
