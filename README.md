@@ -16,18 +16,18 @@ Tha database was implemented in postgresql and looks like the following diagram:
 
 #### Optional
 
-#### 1.- If you want to run the JSON data colector, enter your key in api_keys.py and execute beer_api.ipynb
+#### 1.- If you want to run the JSON data collector, enter your key in api_keys.py and execute beer_api.ipynb
 
 ## Requierements:
 
-### Before trying to exeute the code make sure you have the following packages installed in python:
+### Before trying to execute the code make sure you have the following packages installed in python:
 
 #### 1.- psycopg2
 
 ### The repo is divided into the following sections:
 
 #### 1.- SQL:
-     Contain the erd diagram and the sql quieries to build the tables in postgresql
+     Contain the ERD and the SQL queries to build the tables in postgresql
         
 #### 2.- JSON:
      Contains the code used to get the data from brewerydb.com and export it as csv file
