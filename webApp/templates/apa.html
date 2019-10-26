@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>APA Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}">
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style.css') }}">
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/d3Style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Addding the navigation bar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container">
+      <!-- Main reference -->
+      <a href="/" class="navbar-brand">Dog Rescue ATX</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Select the items to colllapse-->
+      <div class="navbar-collapse collapse " id="navbarResponsive" style="">
+        <!-- Sub-Navigation bar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Nav item Comparison -->
+          <li class="nav-item">
+            <a class="nav-link" href="apa">APA data</a>
+          </li>
+          <!-- Nav item Data -->
+          <li class="nav-item">
+            <a class="nav-link" href="geomap">Stray dog map</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Extra row to look better -->
+  <div class="row" style="margin-top: 6rem;">
+  </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h1>Our Data</h1>
+          <h3>What You Should Know before You Adopt!</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="article">
+              <p><strong>Line Graph: </strong>This graph shows you a count of the number of dogs in the Austin Pets Alive system by age.
+                We can see that the organization tends to have a large number of younger dogs in their care. It is important for you to
+                consider your lifestyle when choosing a dog to join your family. It is worth noting that younger dogs take time and need
+                constant attention, whereas, older dogs may require increased medical attention but less supervison. </p>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div id="agePlot"></div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div id="sunBurst"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="article">
+            <p><strong>Sunburst Chart: </strong>This interactive chart gives a good visual representation of our findings with respect
+              to the dogs in the Austin Pets Alive system. This chart shows an exact break down of how many male and female dogs are in foster care or physically
+              at the APA location as well as how many of these are puppies, considered 6 months or younger. </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="center"> -->
+          <div class="honeyComb col-lg-7 col-md-12 col-sm-12">
+            <div class="row">
+              <div class="feo"></div>
+            </div>
+            <div class="row">
+              <div class="legendFeo"></div>
+            </div>
+          </div>
+          <div class="ToolTipSpider col-lg-5 col-md-12 col-sm-12">
+            <div id="spyderDraw" class="ToolTipSpider"></div>
+          </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="article">
+            <p><strong>Honey Comb & Spider Chart: </strong> Use these charts to determine which dog is most compatable with your lifestyle.
+            These interactive charts are very interesting to use. Each hexagon represents a dog. The color represents the likeliness each dog
+            has to be adopted based on an average. The average we used comes from the spider chart on the right. These stats come directly
+            from the Austin Pets Alive website and they represent how well each dog does with other dogs, cats, children, and how it does
+            home alone. We took the average of these numbers to determine the color associated with each dog.</p>
+          </div>
+        </div>
+      </div>
+
+        <!-- Empty row to make it look better -->
+    <div class="row">
+      <div>
+        <p><br></p>
+      </div>
+    </div>
+    <div class="fixed-bottom navbar-dark bg-primary footer1" > <!-- Fotter -->
+        <p class="center"><small><br></small></p>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script type="text/javascript" src="../static/js/hexabin.js"></script>
+    <script type="text/javascript" src="../static/js/apa.js"></script>
+  </body>
+
+  </html>
