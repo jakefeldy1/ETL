@@ -1,58 +1,3 @@
-/* .box {
-  min-height: 50px;
-  padding: 5px;
-  margin: 5px;
-  font-weight: 800;
-  color: #fff;
-}
-
-.skyblue {
-  background: deepskyblue;
-}
-
-.purple {
-  background: rebeccapurple;
-}
-
-.red {
-  background: indianred;
-} */
-
-/*Settingd for menus in navigation var*/
-/* .ml-auto .dropdown-menu {
-  left: auto !important;
-  right: 0px;
-} */
-
-/*Stile for container inside the page*/
-/* .index_summary_left {
-  margin-left: 3rem;
-  margin-right: 1.5rem;
-
-}
-
-.index_summary_right {
-  margin-left: 1.5rem;
-  margin-right: 3rem;
-
-} */
-
-
-
-/* .footer1 {
-  text-align: center;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.comparison_head {
-  text-align:center;
-} */
 
 .ToolTipSpider{
   width:450px;
@@ -70,4 +15,142 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+/*-------------------------------*/
+/* body {
+  margin: 20px;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+button {
+  background: orange;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Lato';
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  background: blue;
+}
+
+.square {
+  pointer-events: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  margin: 4px;
+  display: inline-block;
+}
+
+.controls {
+  margin-top: 300px;
+}
+
+.seek {
+  width: 160px;
+  position: relative;
+  top: 5px;
+  margin-left: 20px;
+} */
+
+/*-----------------*/
+/* button {
+  background: orange;
+  color: white;
+  margin: 5px 0;
+  padding: 6px;
+  border-radius: 2px;
+  font-family: 'Lato';
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  background: blue;
+}
+
+.scan-headline {
+  color: cornflowerblue;
+} */
+/*-----------------*/
+
+/* .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #DF691A;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #DF691A;
+  cursor: pointer;
+} */
+
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #DF691A;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #DF691A;
+  cursor: pointer;
 }

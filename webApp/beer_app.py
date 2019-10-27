@@ -14,9 +14,9 @@ def home():
     # Return template and data
     return render_template("index.html", petData = pet_data)
 
-@app.route("/apa")
+@app.route("/beerai")
 def apa():
-    return render_template("apa.html")
+    return render_template("beer_ai.html")
 
 
 if __name__ == "__main__":
