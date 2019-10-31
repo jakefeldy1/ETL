@@ -51,12 +51,16 @@
         <p>Use the slide bars to select the parameters to evaluate your beer review prediction.
           Once you are done click on predict do the calculation.</p>
       </div>
+      <div class="row">
+          <div id="my_container">
+          </div>
+      </div>
       <div class="row" style="margin-top: 3rem;">
         <div data-aos="fade-up" data-aos-duration="1000" class="col-lg-6 col-md-6 col-sm-12">
           <div class="card border-warning mb-3">
             <div class="card-header">IBU: <span id="ibu"></span> </div>
             <div class="card-body">
-              <input type="range" step="0.1" type="range" min="12" max="82.5" value="12" class="slider seek" id="myIBURange">
+              <input type="range" step="1" type="range" min="12" max="82.5" value="12" class="slider seek" id="myIBURange">
             </div>
           </div>
         </div>
@@ -74,6 +78,7 @@
       </div>
     </div><!-- End of main data container -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
