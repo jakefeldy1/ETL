@@ -48,19 +48,37 @@
         <h2>Welcome to Beer Review Predictor: </h2>
       </div>
       <div class="row">
-        <p>Use the slide bars to select the parameters to evaluate your beer review prediction.
-          Once you are done click on predict do the calculation.</p>
+        <p>Use the slide bars to select the parameters to evaluate your beer review prediction.</p>
       </div>
-      <div class="row">
-          <div id="my_container">
-          </div>
+      <div class="row" style="margin-top: 1rem;">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                <h4>Select the user:</h4>
+                <div id="my_container"></div>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                <h4>Beer Style Filter</h4>
+                <select id="styleFilFormat" class="custom-select" onchange="getStyleData(this.value)">
+                    <option value="gteq">Greater than or equal</option>
+                    <option value="lteq">Lower than or equal</option>
+                </select>
+              </div>
+            </div>
+        </div>
       </div>
       <div class="row" style="margin-top: 3rem;">
         <div data-aos="fade-up" data-aos-duration="1000" class="col-lg-6 col-md-6 col-sm-12">
           <div class="card border-warning mb-3">
             <div class="card-header">IBU: <span id="ibu"></span> </div>
             <div class="card-body">
-              <input type="range" step="1" type="range" min="12" max="82.5" value="12" class="slider seek" id="myIBURange">
+              <input type="range" step="0.5" type="range" min="12" max="82.5" value="12" class="slider seek" id="myIBURange">
             </div>
           </div>
         </div>
@@ -73,8 +91,29 @@
           </div>
         </div>
       </div>
-      <div class="row" style="margin-top: 3rem;">
+      <div class="row" style="margin-top: 1rem;">
         <h4>Review predicted: <span id="prediction"></span> </h4>
+      </div>
+      <!-- Row for the beer styles -->
+      <div class="row" style="margin-top: 3rem;">
+        <!-- Beer table-->
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div id="table-area" class="">
+            <table id="beer-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Style Name</th>
+                  <th class="table-head">ibu_Min</th>
+                  <th class="table-head">srm_Min</th>
+                  <th class="table-head">abv_Min</th>
+                  <th class="table-head">og_Min</th>
+                  <th class="table-head">fg_Min</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div><!-- End of main data container -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script> -->
@@ -83,6 +122,9 @@
     <script>
       AOS.init();
     </script>
+    <script type="text/javascript" src="../static/js/beer_models.js"></script>
+    <script type="text/javascript" src="../static/js/beer_styles.js"></script>
     <script type="text/javascript" src="../static/js/beer_ai_layer.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/beer_style_app.js"></script> -->
 </body>
 </html>
