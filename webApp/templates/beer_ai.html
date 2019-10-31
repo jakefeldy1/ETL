@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
       <div class="container">
         <!-- Main reference -->
-        <a href="#" class="navbar-brand">Data Beer Lab</a>
+        <a href="/" class="navbar-brand">Data Beer Lab</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,13 +27,9 @@
         <div class="navbar-collapse collapse " id="navbarResponsive" style="">
           <!-- Sub-Navigation bar -->
           <ul class="navbar-nav ml-auto">
-            <!-- Nav item Comparison -->
-            <li class="nav-item">
-              <a class="nav-link" href="apa">Beer data</a>
-            </li>
             <!-- Nav item Data -->
             <li class="nav-item">
-              <a class="nav-link" href="geomap">Beer machine Learning</a>
+              <a class="nav-link" href="beerai">Beer machine Learning</a>
             </li>
           </ul>
         </div>
@@ -51,38 +47,12 @@
         <p>Use the slide bars to select the parameters to evaluate your beer review prediction.</p>
       </div>
       <div class="row" style="margin-top: 1rem;">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="panel panel-default">
-              <div class="panel-heading"></div>
-              <div class="panel-body">
-                <h4>User</h4>
-                <div id="my_container"></div>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="panel panel-default">
-              <div class="panel-heading"></div>
-              <div class="panel-body">
-                <h4>IBU Style Filter</h4>
-                <select id="styleIbuFilFormat" class="custom-select" onchange="getIbuStyleData(this.value)">
-                    <option value="gteq">Greater than or equal</option>
-                    <option value="lteq">Lower than or equal</option>
-                </select>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="panel panel-default">
-              <div class="panel-heading"></div>
-              <div class="panel-body">
-                <h4>SRM Style Filter</h4>
-                <select id="styleSrmFormat" class="custom-select" onchange="getSrmStyleData(this.value)">
-                    <option value="gteq">Greater than or equal</option>
-                    <option value="lteq">Lower than or equal</option>
-                </select>
-              </div>
-            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"></div>
+          <div class="panel-body">
+            <h4>User</h4>
+            <div id="my_container"></div>
+          </div>
         </div>
       </div>
       <div class="row" style="margin-top: 3rem;">
@@ -106,6 +76,33 @@
       <div class="row" style="margin-top: 1rem;">
         <h4>Review predicted: <span id="prediction"></span> </h4>
       </div>
+      <!-- Beer style control -->
+      <div class="row" style="margin-top: 1rem;">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                <h5>IBU Style Filter</h5>
+                <select id="styleIbuFilFormat" class="custom-select" onchange="getIbuStyleData(this.value)">
+                    <option value="gteq">Greater than or equal</option>
+                    <option value="lteq">Lower than or equal</option>
+                </select>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                <h5>SRM Style Filter</h5>
+                <select id="styleSrmFormat" class="custom-select" onchange="getSrmStyleData(this.value)">
+                    <option value="gteq">Greater than or equal</option>
+                    <option value="lteq">Lower than or equal</option>
+                </select>
+              </div>
+            </div>
+        </div>
+      </div>
       <!-- Row for the beer styles -->
       <div class="row" style="margin-top: 3rem;">
         <!-- Beer table-->
@@ -115,11 +112,13 @@
               <thead>
                 <tr>
                   <th class="table-head">Style Name</th>
-                  <th class="table-head">ibu_Min</th>
-                  <th class="table-head">srm_Min</th>
-                  <th class="table-head">abv_Min</th>
-                  <th class="table-head">og_Min</th>
-                  <th class="table-head">fg_Min</th>
+                  <th class="table-head">IBU Min.</th>
+                  <th class="table-head">IBU Max.</th>
+                  <th class="table-head">SRM Min.</th>
+                  <th class="table-head">SRM Max.</th>
+                  <th class="table-head">ABV Max</th>
+                  <th class="table-head">OG Min</th>
+                  <th class="table-head">FG Max</th>
                 </tr>
               </thead>
               <tbody></tbody>

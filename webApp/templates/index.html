@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
       <div class="container">
         <!-- Main reference -->
-        <a href="#" class="navbar-brand">Data Beer Lab</a>
+        <a href="/" class="navbar-brand">Data Beer Lab</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,13 +27,9 @@
         <div class="navbar-collapse collapse " id="navbarResponsive" style="">
           <!-- Sub-Navigation bar -->
           <ul class="navbar-nav ml-auto">
-            <!-- Nav item Comparison -->
-            <li class="nav-item">
-              <a class="nav-link" href="apa">Beer data</a>
-            </li>
             <!-- Nav item Data -->
             <li class="nav-item">
-              <a class="nav-link" href="geomap">Beer machine Learning</a>
+              <a class="nav-link" href="beerai">Beer machine Learning</a>
             </li>
           </ul>
         </div>
@@ -47,21 +43,22 @@
       <!--Welcome setion-->
       <div class="row">
         <h3>Welcome to Data Beer Lab: </h3>
-        <p>This site provides information about data analysis about beer characteristics and their relation to multiple beer reviews. </p>
+      </div>
+      <div class="row">
+        <p>This site provides machine learning models per users according recorded reviews. </p>
       </div>
       <!--Data links-->
-      <div class="row" style="margin-top: 3rem;">
-        <h5>To know more about the beer data, use the following links</h5>
-      </div>
-      <!--Beer characteristics-->
-      <div class="row" style="margin-top: 3rem;">
-        <h5>To know more about beer basic characteristics, scroll down</h5>
+      <div class="row">
+        <ul>
+          <li>To know more about the beer data analysys use the link sin the main menu</li>
+          <li>To know more about beer basic characteristics, scroll down</li>
+        </ul>
       </div>
 ​
       <!-- **********************  Card entry row ********************** -->
       <div class="row" style="margin-top: 2rem;">
         <!-- Card entry-->
-        <div data-aos="fade-up" data-aos-duration="1000" class="col-lg-9 col-md-9 col-sm-12">
+        <div data-aos="fade-up" data-aos-duration="1000" class="col-lg-12 col-md-12 col-sm-12">
           <div class="card border-warning mb-3">
             <div class="card-header">Alcohol by volume (ABV)</div>
             <div class="card-body">
@@ -69,19 +66,18 @@
             </div>
           </div>
         </div>
-        <!-- Card entry-->
-        <div class="col-lg-3 col-md-3 col-sm-12"></div>
       </div> <!-- end of entry row-->
       <!-- **********************  Card entry row ********************** -->
 ​      <div class="row" style="margin-top: 2rem;">
         <!-- Card entry-->
-        <div class="col-lg-3 col-md-3 col-sm-12"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12"></div>
         <!-- Card entry-->
-        <div data-aos="fade-down" data-aos-duration="1000" class="col-lg-9 col-md-9 col-sm-12">
+        <div data-aos="fade-down" data-aos-duration="1000" class="col-lg-6 col-md-6 col-sm-12">
           <div class="card border-warning mb-3">
             <div class="card-header">International Bitterness Units (IBU)</div>
             <div class="card-body">
-              <p class="card-text">IBU stands for International Bitterness Units and is rated on a scale of 0 to 100. Drinkers perceive the bitterness in their drink as the difference between the amount of hops and malts in the finished beverage. The extremely hoppy IPAs can reach into the 70s .</p>
+              <p class="card-text">IBU stands for International Bitterness Units and is rated on a scale of 0 to 100. Drinkers perceive the bitterness in their drink as the difference between the amount of hops and malts in the finished beverage. The extremely hoppy IPAs can reach into the 70s .
+              The higher the number the bitter the beer </p>
             </div>
           </div>
         </div>
@@ -89,7 +85,7 @@
       <!-- ********************** Card entry row ********************** -->
       <div class="row" style="margin-top: 2rem;">
         <!-- Card entry-->
-        <div data-aos="fade-down-right" data-aos-duration="1000" class="col-lg-9 col-md-9 col-sm-12">
+        <div data-aos="flip-right" data-aos-duration="1000" class="col-lg-12 col-md-12 col-sm-12">
           <div class="card border-warning mb-3">
             <div class="card-header">Standard Reference Method (SRM)</div>
             <div class="card-body">
@@ -98,14 +94,12 @@
           </div>
         </div>
         <!-- Card entry-->
-        <div class="col-lg-3 col-md-3 col-sm-12"></div>
+        <!-- <div class="col-lg-6 col-md-6 col-sm-12"></div> -->
       </div> <!-- end of entry row-->
       <!-- ********************** Card entry row ********************** -->
       <div class="row" style="margin-top: 2rem;">
         <!-- Card entry-->
-        <div class="col-lg-3 col-md-3 col-sm-12"></div>
-        <!-- Card entry-->
-        <div data-aos="fade-down-left" class="col-lg-9 col-md-9 col-sm-12">
+        <div data-aos="fade-down-left" class="col-lg-6 col-md-6 col-sm-12">
           <div class="card border-warning mb-3">
             <div class="card-header">Original Gravity (OG)</div>
             <div class="card-body">
@@ -113,6 +107,8 @@
             </div>
           </div>
         </div>
+        <!-- Card entry-->
+        <div class="col-lg-6 col-md-6 col-sm-12"></div>
       </div> <!-- end of entry row-->
       <!-- ********************** Card entry row **********************-->
       <div class="row" style="margin-top: 2rem;">

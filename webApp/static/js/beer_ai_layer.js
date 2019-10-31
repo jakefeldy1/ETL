@@ -26,18 +26,24 @@ function tableInit(my_data) {
         //ibu_min
         var sibu_min = row.append("td");
         sibu_min.text(style.ibu_Min);
+        //ibu_max
+        var sibu_max = row.append("td");
+        sibu_max.text(style.ibu_Max);
         //srm_min
         var ssrm_min = row.append("td");
         ssrm_min.text(style.srm_Min);
+        //srm_max
+        var ssrm_max = row.append("td");
+        ssrm_max.text(style.srm_Max);
         //abv_min
-        var sabv_min = row.append("td");
-        sabv_min.text(style.abv_Min);
+        var sabv_m = row.append("td");
+        sabv_m.text(style.abv_Max);
         //og_min
-        var sog_min = row.append("td");
-        sog_min.text(style.og_Min);
+        var sog_m = row.append("td");
+        sog_m.text(style.og_Min);
         //fg_Min
-        var sfg_min = row.append("td");
-        sfg_min.text(style.fg_Min);
+        var sfg_m = row.append("td");
+        sfg_m.text(style.fg_Max);
     });
 }
 
@@ -61,31 +67,16 @@ function lteCond(input, data){
 
 function tableFilter(inputIbu,inputSrm){
   //Check the filter format
-
-  // if(filter_format === "gteq"){
-  //   //Filter anding the conditions
-  //   var filteredData = tableData.filter(sighting => {
-  //     var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
-  //     var srmFlag = gteCond(inputSrm, sighting.srm_Min);
-  //     return ibuFlag && srmFlag;
-  //   });
-  // } else {
-  //   var filteredData = tableData.filter(sighting => {
-  //     var ibuFlag = lteCond(inputIbu, sighting.ibu_Min);
-  //     var srmFlag = lteCond(inputSrm, sighting.srm_Min);
-  //     return ibuFlag && srmFlag;
-  //   });
-  // }
   if(filterIbuFormat === "gteq"){
     if(filterSmrFormat === "gteq"){
       var filteredData = tableData.filter(sighting => {
-        var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
-        var srmFlag = gteCond(inputSrm, sighting.srm_Min);
+        var ibuFlag = gteCond(inputIbu, sighting.ibu_Max);
+        var srmFlag = gteCond(inputSrm, sighting.srm_Max);
         return ibuFlag && srmFlag;
       });
     }else{
       var filteredData = tableData.filter(sighting => {
-        var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
+        var ibuFlag = gteCond(inputIbu, sighting.ibu_Max);
         var srmFlag = lteCond(inputSrm, sighting.srm_Min);
         return ibuFlag && srmFlag;
       });
@@ -94,7 +85,7 @@ function tableFilter(inputIbu,inputSrm){
     if(filterSmrFormat === "gteq"){
       var filteredData = tableData.filter(sighting => {
         var ibuFlag = lteCond(inputIbu, sighting.ibu_Min);
-        var srmFlag = gteCond(inputSrm, sighting.srm_Min);
+        var srmFlag = gteCond(inputSrm, sighting.srm_Max);
         return ibuFlag && srmFlag;
       });
     }else{
