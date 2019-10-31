@@ -51,21 +51,33 @@
         <p>Use the slide bars to select the parameters to evaluate your beer review prediction.</p>
       </div>
       <div class="row" style="margin-top: 1rem;">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="panel panel-default">
               <div class="panel-heading"></div>
               <div class="panel-body">
-                <h4>Select the user:</h4>
+                <h4>User</h4>
                 <div id="my_container"></div>
               </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="panel panel-default">
               <div class="panel-heading"></div>
               <div class="panel-body">
-                <h4>Beer Style Filter</h4>
-                <select id="styleFilFormat" class="custom-select" onchange="getStyleData(this.value)">
+                <h4>IBU Style Filter</h4>
+                <select id="styleIbuFilFormat" class="custom-select" onchange="getIbuStyleData(this.value)">
+                    <option value="gteq">Greater than or equal</option>
+                    <option value="lteq">Lower than or equal</option>
+                </select>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                <h4>SRM Style Filter</h4>
+                <select id="styleSrmFormat" class="custom-select" onchange="getSrmStyleData(this.value)">
                     <option value="gteq">Greater than or equal</option>
                     <option value="lteq">Lower than or equal</option>
                 </select>

@@ -2,7 +2,8 @@
 //Beer style data section
 //***********************************************************************
 var tableData = data;
-var filter_format = "gteq";
+var filterIbuFormat = "gteq";
+var filterSmrFormat = "gteq";
 
 /*
 Function used to update the table
@@ -60,40 +61,53 @@ function lteCond(input, data){
 
 function tableFilter(inputIbu,inputSrm){
   //Check the filter format
-  if(filter_format === "gteq"){
-    //Filter anding the conditions
-    var filteredData = tableData.filter(sighting => {
-      var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
-      var srmFlag = gteCond(inputSrm, sighting.srm_Min);
-      return ibuFlag && srmFlag;
-    });
-  } else {
-    var filteredData = tableData.filter(sighting => {
-      var ibuFlag = lteCond(inputIbu, sighting.ibu_Min);
-      var srmFlag = lteCond(inputSrm, sighting.srm_Min);
-      return ibuFlag && srmFlag;
-    });
+
+  // if(filter_format === "gteq"){
+  //   //Filter anding the conditions
+  //   var filteredData = tableData.filter(sighting => {
+  //     var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
+  //     var srmFlag = gteCond(inputSrm, sighting.srm_Min);
+  //     return ibuFlag && srmFlag;
+  //   });
+  // } else {
+  //   var filteredData = tableData.filter(sighting => {
+  //     var ibuFlag = lteCond(inputIbu, sighting.ibu_Min);
+  //     var srmFlag = lteCond(inputSrm, sighting.srm_Min);
+  //     return ibuFlag && srmFlag;
+  //   });
+  // }
+  if(filterIbuFormat === "gteq"){
+    if(filterSmrFormat === "gteq"){
+      var filteredData = tableData.filter(sighting => {
+        var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
+        var srmFlag = gteCond(inputSrm, sighting.srm_Min);
+        return ibuFlag && srmFlag;
+      });
+    }else{
+      var filteredData = tableData.filter(sighting => {
+        var ibuFlag = gteCond(inputIbu, sighting.ibu_Min);
+        var srmFlag = lteCond(inputSrm, sighting.srm_Min);
+        return ibuFlag && srmFlag;
+      });
+    }
+  }else{
+    if(filterSmrFormat === "gteq"){
+      var filteredData = tableData.filter(sighting => {
+        var ibuFlag = lteCond(inputIbu, sighting.ibu_Min);
+        var srmFlag = gteCond(inputSrm, sighting.srm_Min);
+        return ibuFlag && srmFlag;
+      });
+    }else{
+      var filteredData = tableData.filter(sighting => {
+        var ibuFlag = lteCond(inputIbu, sighting.ibu_Min);
+        var srmFlag = lteCond(inputSrm, sighting.srm_Min);
+        return ibuFlag && srmFlag;
+      });
+    }
   }
   tableInit(filteredData);
 }
 
-// // Select the submit button
-// var submit = d3.select("#filter-btn");
-//
-// //Action on button click
-// submit.on("click", function() {
-//   //-------------------------------
-//   //Get the data form the form
-//   //-------------------------------
-//   //[-] IBU
-//   var inputElement = d3.select("#ibuFil");
-//   var inputIbu = inputElement.property("value");
-//   //[-] SRM
-//   inputElement = d3.select("#srmFil");
-//   var inputSrm = inputElement.property("value");
-//   //-------------------------------
-//   //tableFilter(inputIbu,inputSrm);
-// });
 
 //tableInit(tableData);
 //***********************************************************************
@@ -159,7 +173,11 @@ function getData(user) {
 }
 
 //Used for dropdoen menu to update the filter format
-function getStyleData(dataset) {
-  filter_format=dataset;
+function getIbuStyleData(dataset) {
+  filterIbuFormat=dataset;
+  tableFilter(ibu_slider.value,srm_slider.value);
+}
+function getSrmStyleData(dataset) {
+  filterSmrFormat=dataset;
   tableFilter(ibu_slider.value,srm_slider.value);
 }
