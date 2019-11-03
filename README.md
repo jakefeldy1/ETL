@@ -6,7 +6,7 @@ We gathered beer information from two different sources and built a database.
 
 #### 1. cd into webApp
 #### 2. execute generate_json_cntr.py to generate the model container
-#### use the parameter --model=<number of user to include in the web app>
+#### use the parameter --model=\<number of user to include in the web app\>
 #### 3. execute beer_app.py to start the web server and follow instruction for the IP to open in the explorer
 
 
